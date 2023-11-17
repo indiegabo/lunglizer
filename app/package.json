@@ -1,13 +1,12 @@
 {
-  "name": "angular-electron",
-  "description": "Angular Electron sample",
+  "name": "lunglizer",
+  "description": "Fluid localization tool",
+  "homepage": "https://lunglizer.com",
   "author": {
-    "name": "Maxime GRIS",
-    "email": "maxime.gris@gmail.com"
+    "name": "Indie Gabo",
+    "email": "indiegabodev@gmail.com"
   },
-  "version": "13.0.0",
   "main": "main.js",
   "private": true,
-  "dependencies": {
-  }
+  "dependencies": {}
 }

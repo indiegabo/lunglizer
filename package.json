@@ -1,25 +1,21 @@
 {
-  "name": "angular-electron",
-  "version": "13.0.0",
-  "description": "Angular 16 with Electron 25 (Typescript + SASS + Hot Reload)",
-  "homepage": "https://github.com/maximegris/angular-electron",
+  "name": "lunglizer",
+  "version": "0.0.0",
+  "description": "Fluid localization tool",
+  "homepage": "https://lunglizer.com",
   "author": {
-    "name": "Maxime GRIS",
-    "email": "maxime.gris@gmail.com"
+    "name": "Indie Gabo",
+    "email": "indiegabodev@gmail.com"
   },
   "keywords": [
-    "angular",
-    "angular 16",
-    "electron",
-    "electron 25",
-    "nodejs",
-    "typescript",
-    "playwright",
-    "eslint",
-    "sass",
-    "windows",
-    "mac",
-    "linux"
+    "localization",
+    "localizations",
+    "translation",
+    "translations",
+    "indie",
+    "independent",
+    "open source",
+    "mit"
   ],
   "main": "app/main.js",
   "private": true,
