@@ -1,4 +1,4 @@
-import {app, BrowserWindow, screen} from 'electron';
+import { app, BrowserWindow, dialog, ipcMain, ipcRenderer, screen } from 'electron';
 import * as path from 'path';
 import * as fs from 'fs';
 
@@ -6,9 +6,20 @@ let win: BrowserWindow | null = null;
 const args = process.argv.slice(1),
   serve = args.some(val => val === '--serve');
 
+ipcMain.handle('test', async (e, args) => {
+  const result = await dialog.showOpenDialog({
+    properties: ['openDirectory'],
+    message: 'Select a directory',
+  });
+
+  return result;
+})
+
 function createWindow(): BrowserWindow {
 
   const size = screen.getPrimaryDisplay().workAreaSize;
+  size.width = 1280;
+  size.height = 720;
 
   // Create the browser window.
   win = new BrowserWindow({
@@ -34,13 +45,16 @@ function createWindow(): BrowserWindow {
     let pathIndex = './index.html';
 
     if (fs.existsSync(path.join(__dirname, '../dist/index.html'))) {
-       // Path when running electron in local folder
+      // Path when running electron in local folder
       pathIndex = '../dist/index.html';
     }
 
     const url = new URL(path.join('file:', __dirname, pathIndex));
     win.loadURL(url.href);
   }
+
+  // Open DevTools - Remove for PRODUCTION!
+  win.webContents.openDevTools();
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -49,6 +63,8 @@ function createWindow(): BrowserWindow {
     // when you should delete the corresponding element.
     win = null;
   });
+
+
 
   return win;
 }

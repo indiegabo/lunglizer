@@ -29,7 +29,8 @@
             "allowedCommonJsDependencies": [
               "rxjs",
               "rxjs-compat",
-              "rxjs/operators"
+              "rxjs/operators",
+              "electron"
             ],
             "outputPath": "dist",
             "index": "src/index.html",
